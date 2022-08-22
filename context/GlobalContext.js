@@ -1,5 +1,6 @@
 import {createContext,useEffect,useState} from "react";
-import axios from  'axios';
+import { handlerGetData } from "../utils/getData";
+import { handlerGetSearchData } from "../utils/getSearchData";
 
 const GlobalProvider = createContext({});
 
@@ -13,21 +14,23 @@ const InfoContext = ({children}) => {
 
   const handlerDarkmode = () => setDarkmode(!darkMode);
 
-  const [dado,setDado] = useState([]);
-
   const [getId,setGetId] = useState({});
 
+  const [search,setSearch] = useState("");
+
+  const [dado,setDado] = useState([]);
+
+  const [dadoFilter,setDadoFilter] = useState([]);
+  
   useEffect(()=>{
-      axios.get("/api/get/")
-      .then((res)=>{
-      setDado(res.data);
-      }).catch((err)=>{
-      console.log(err)
-      });
+    handlerGetData(setDado);
   },[]);
   
   
   let values = {
+                setDadoFilter,
+                setSearch,
+                search,
                 darkMode,
                 handlerDarkmode,
                 firstName,
@@ -35,6 +38,7 @@ const InfoContext = ({children}) => {
                 lastName,
                 setLastName,
                 dado,
+                dadoFilter,
                 getId,
                 setGetId
             };

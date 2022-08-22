@@ -1,13 +1,17 @@
 import { Box, Flex,Input,InputGroup,InputRightElement } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import GetData from '../GetData'
 import {TbSearch} from 'react-icons/tb'
 import { GlobalProvider } from '../../../context/GlobalContext'
+import { handlerGetSearchData } from '../../../utils/getSearchData'
 
 const Content = () => {
 
   const { 
-    darkMode
+    darkMode,
+    setSearch,
+    search,
+    setDadoFilter
  } = useContext(GlobalProvider)
 
   return (
@@ -32,6 +36,12 @@ const Content = () => {
               borderRadius={'10px'}
               bg={'rgba(250,250,250,.5)'}
               p={'1.25rem 3.7rem 1.25rem .7rem'}
+              onKeyDown={(e)=>{
+                if(e.keyCode == 13){
+                
+                }
+              }}
+              onChange={(e)=>{setSearch(e.target.value)}}
               border={darkMode ? '2px solid  rgba(250,250,250,.7)' : '2px solid #000!important'}
               color={darkMode ? 'rgba(0,0,0,.5)':'#000'}
               _hover={{
@@ -55,6 +65,7 @@ const Content = () => {
                               mr={'1.15rem'}
                               borderRadius={'10px'}
                               cursor={'pointer'}
+                              onClick={()=>{ handlerGetSearchData(search,setDadoFilter)}}
                             >
                                 <TbSearch/>
                               </Box>
