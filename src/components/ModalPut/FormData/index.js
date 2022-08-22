@@ -44,10 +44,6 @@ const FormData = () => {
       handlerPutData(getId,firstName,lastName)
    }}
    >
-      {
-         getIdData.map(d =>{
-            return(
-               <>
                         <Box>
          <FormLabel
       color={darkMode ? 'rgba(250,250,250,.7)' : '#000'}
@@ -80,10 +76,6 @@ const FormData = () => {
             // onClick={handlerBtnLastName}
             />
       </Box>
-               </>
-            )
-         })
-      }
         <Button 
             mt={'2rem'}
             mb={'1rem'}
