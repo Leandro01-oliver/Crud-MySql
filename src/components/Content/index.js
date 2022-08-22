@@ -53,25 +53,21 @@ const Content = () => {
                 border:darkMode ? '2px solid  rgba(250,250,250,.7)' :'none'
               }}
             />
-          <InputRightElement 
-              children={
-                          <>
-                            <Box 
-                              color={darkMode ? 'rgba(0,0,0,.5)':'#fff'}
-                              bg={darkMode ? 'rgba(250,250,250,.7)' : '#000'}
-                              p={'.6rem'}
-                              px={'1rem'}
-                              mt={'.25rem'}
-                              mr={'1.15rem'}
-                              borderRadius={'10px'}
-                              cursor={'pointer'}
-                              onClick={()=>{ handlerGetSearchData(search,setDadoFilter)}}
-                            >
-                                <TbSearch/>
-                              </Box>
-                          </>
-                        } 
-            />
+              <Box 
+                  color={darkMode ? 'rgba(0,0,0,.5)':'#fff'}
+                  bg={darkMode ? 'rgba(250,250,250,.7)' : '#000'}
+                  p={'.6rem'}
+                  px={'1rem'}
+                  mt={'.25rem'}
+                  position={'absolute'}
+                  right={'0'}
+                  mr={'.5rem'}
+                  borderRadius={'10px'}
+                  cursor={'pointer'}
+                  onClick={()=>{ handlerGetSearchData(search,setDadoFilter)}}
+                >
+                    <TbSearch/>
+                  </Box>
           </InputGroup>
       </Flex>
            <GetData/>

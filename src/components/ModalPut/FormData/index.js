@@ -17,14 +17,6 @@ const FormData = () => {
 
   const [getIdData,setGetIdData] = useState([]);
 
-  const [firstNameBtn,setFirstNameBtn] = useState(false);
-
-  const handlerBtnFirstName = () => setFirstNameBtn(!firstNameBtn);
-
-  const [lastNameBtn,setLastNameBtn] = useState(false);
-
-  const handlerBtnLastName = () => setLastNameBtn(!lastNameBtn);
-
   useEffect(()=>{
     axios.get(`/api/getAll/${getId}`)
     .then((result)=>{
@@ -32,7 +24,7 @@ const FormData = () => {
     }).catch((err)=>{
       console.log(err)
     });
-  },[])
+  })
 
   return (
    <>
