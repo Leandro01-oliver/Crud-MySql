@@ -55,11 +55,12 @@ const FormData = () => {
             FirstName :
          </FormLabel>
          <Input 
-            value={getIdData != "" && firstNameBtn ?  null : d.first_name}
+            // value={getIdData != "" && firstNameBtn ?  null : d.first_name}
+            type={'text'}
             onChange={(e) => setFirstName(e.target.value)}
             color={darkMode ? 'rgba(250,250,250,.7)':'#000'}
             placeholder={'Insert to firstname'}
-            onClick={handlerBtnFirstName}
+            // onClick={handlerBtnFirstName}
          />
       </Box>
       <Box
@@ -71,18 +72,19 @@ const FormData = () => {
             LastName :
          </FormLabel>
          <Input 
-          value={getIdData != "" && lastNameBtn ? null : d.last_name}
+         //  value={getIdData != "" && lastNameBtn ? null : d.last_name}
+            type={'text'}
             onChange={(e) => setLastName(e.target.value)}
             color={darkMode ? 'rgba(250,250,250,.7)':'#000'}
             placeholder={'Insert to lastname'}
-            onClick={handlerBtnLastName}
+            // onClick={handlerBtnLastName}
             />
       </Box>
                </>
             )
          })
       }
-      <Button 
+        <Button 
             mt={'2rem'}
             mb={'1rem'}
             w={'100%'}

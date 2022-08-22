@@ -13,7 +13,7 @@ const  handlerPut = (req,res) =>{
         
         const lastName  = req.body.lastName;
 
-        connection.query('UPDATE tb_user SET first_name = ? AND last_name = ? WHERE id = ?',
+        connection.query('UPDATE tb_user SET first_name = ?, last_name = ? WHERE id = ?',
         [firstName,lastName,conversaoId],
         (err,result)=>{
             if (err) {

@@ -1,5 +1,5 @@
 
-import { Flex} from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import React from 'react'
 import Content from '../Content'
 import DarkMode from './DakMode'
