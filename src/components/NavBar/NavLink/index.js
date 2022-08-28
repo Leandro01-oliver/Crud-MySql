@@ -1,6 +1,8 @@
 import { Button, Text, useDisclosure } from '@chakra-ui/react'
-import React, { useContext } from 'react'
+import React from 'react'
 import ModalForm from '../../Modal'
+import {AiOutlineHome} from 'react-icons/ai'
+import {FiCreditCard} from "react-icons/fi";
 
 const NavLink = () => {
 
@@ -9,12 +11,12 @@ const NavLink = () => {
     let link = [
         {
             nome: 'Home',
-            icon:<></>,
+            icon:<AiOutlineHome/>,
             href:'/'
         },
         {
             nome: 'Create',
-            icon:<></>,
+            icon:<FiCreditCard/>,
             ml:'1rem',
             click: onOpen
         }
@@ -31,7 +33,7 @@ const NavLink = () => {
                     onClick={l.click}
                     ml={l.ml}
                     >
-                        {l.icon}<Text>{l.nome}</Text>
+                        {l.icon}<Text ml={".5rem"}>{l.nome}</Text>
                     </Button>
                 </a>
                 </>

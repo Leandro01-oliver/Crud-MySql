@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const handlerGetData = async (setDado) =>{
+const handlerGetData = (setDado) =>{
 
-    await axios.get("/api/get/")
+     axios.get("/api/get/")
     .then((res)=>{
       setDado(res.data)
     }).catch((err)=>{

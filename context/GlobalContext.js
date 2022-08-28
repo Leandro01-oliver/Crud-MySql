@@ -1,6 +1,5 @@
 import {createContext,useEffect,useState} from "react";
 import { handlerGetData } from "../utils/getData";
-import { handlerGetSearchData } from "../utils/getSearchData";
 
 const GlobalProvider = createContext({});
 
@@ -22,6 +21,8 @@ const InfoContext = ({children}) => {
 
   const [dadoFilter,setDadoFilter] = useState([]);
   
+  const [img,setImg] = useState({});
+
   useEffect(()=>{
     handlerGetData(setDado);
   },[]);
@@ -40,7 +41,9 @@ const InfoContext = ({children}) => {
                 dado,
                 dadoFilter,
                 getId,
-                setGetId
+                setGetId,
+                setImg,
+                img
             };
 
   return (

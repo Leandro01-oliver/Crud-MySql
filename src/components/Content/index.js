@@ -38,7 +38,11 @@ const Content = () => {
               p={'1.25rem 3.7rem 1.25rem .7rem'}
               onKeyDown={(e)=>{
                 if(e.keyCode == 13){
-                
+                  if (search == "") {
+                    alert("digite algo ...")
+                    }else{
+                      handlerGetSearchData(search,setDadoFilter)
+                    }
                 }
               }}
               onChange={(e)=>{setSearch(e.target.value)}}
@@ -64,7 +68,14 @@ const Content = () => {
                   mr={'.5rem'}
                   borderRadius={'10px'}
                   cursor={'pointer'}
-                  onClick={()=>{ handlerGetSearchData(search,setDadoFilter)}}
+                  onClick={()=>{ 
+                    if (search == "") {
+                      alert("digite algo ...")
+                      }else{
+                        handlerGetSearchData(search,setDadoFilter)
+                      }
+                  }}
+                 zIndex={'1000'}
                 >
                     <TbSearch/>
                   </Box>

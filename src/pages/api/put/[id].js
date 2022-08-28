@@ -1,6 +1,6 @@
-import { connection } from "../../../../config/configSql";
+import { connection} from "../../../../config/mysql/configSql";
 
-const  handlerPut = (req,res) =>{
+const  handlerPut = async(req,res) =>{
     if (req.method === 'PUT') {
 
         const id = req.query;
@@ -9,12 +9,14 @@ const  handlerPut = (req,res) =>{
     
         let conversaoId = parseInt(tratamento)
         
+        const urlImg = req.body.urlImg;
+
         const firstName = req.body.firstName;
         
         const lastName  = req.body.lastName;
 
-        connection.query('UPDATE tb_user SET first_name = ?, last_name = ? WHERE id = ?',
-        [firstName,lastName,conversaoId],
+       await connection.query('UPDATE tb_user SET first_name = ?, last_name = ?, img_user = ? WHERE id = ?',
+        [firstName,lastName,urlImg,conversaoId],
         (err,result)=>{
             if (err) {
                 console.log("Nao foi possível dar o insert : ",err)

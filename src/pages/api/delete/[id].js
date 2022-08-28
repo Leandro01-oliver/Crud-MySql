@@ -1,4 +1,4 @@
-import { connection} from "../../../../config/configSql";
+import { connection} from "../../../../config/mysql/configSql";
 
  const handlerDelete = (req,res)=>{
   if (req.method == "DELETE") {

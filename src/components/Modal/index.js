@@ -21,7 +21,9 @@ const ModalForm = (props) => {
         pt={'2.5rem'}
         bg={darkMode ? 'rgba(0,0,0,.75)' : '#fff'}
         >
-          <ModalCloseButton color={darkMode ? 'rgba(250,250,250,.7)' : '#000'}/>
+          <ModalCloseButton 
+          color={darkMode ? 'rgba(250,250,250,.7)' : '#000'}
+          />
           <ModalBody>
             <FormData />
           </ModalBody>
