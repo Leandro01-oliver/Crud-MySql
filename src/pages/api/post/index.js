@@ -9,7 +9,7 @@ import { connection} from "../../../../config/mysql/configSql";
         
         const lastName  = req.body.lastName;
 
-       await connection.query('INSERT INTO tb_user (first_name,last_name,img_user) VALUES (?,?,?)',
+       await connection.query('INSERT INTO tb_teste (first_name,last_name,img_user) VALUES (?,?,?)',
         [firstName,lastName,urlImg],
         (err,result)=>{
             if (err) {

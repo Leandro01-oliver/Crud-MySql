@@ -8,7 +8,7 @@ import { connection} from "../../../../config/mysql/configSql";
 
       const convertSearch = `%${search.search}%`;
        
-          connection.query('select * from tb_user WHERE first_name LIKE (?) OR last_name LIKE (?) ',
+          connection.query('select * from tb_teste WHERE first_name LIKE (?) OR last_name LIKE (?) ',
           [convertSearch,convertSearch],(err,result)=>{
                 if(err){
                   console.log("Não foi possível se conectar ao mysql : ",err)

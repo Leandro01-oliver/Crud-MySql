@@ -5,6 +5,7 @@ import {GoTrashcan} from 'react-icons/go'
 import {HiPencilAlt} from 'react-icons/hi'
 import { handlerDeleteData } from '../../../utils/deleteData'
 import ModalPut from '../ModalPut'
+import Image from 'next/image'
 
 const GetData = () => {
 
@@ -75,6 +76,17 @@ const GetData = () => {
                           <GoTrashcan/>
                       </Flex>
                   </Flex>
+                          <Box
+                          bgImage={`url(${d.img_user})`}
+                          w={"100%"}
+                          h={"150px"}
+                          my={'1rem'}
+                          bgSize={'100% 150px'}
+                          bgPosition={'center'}
+                          bgRepeat={'no-repeat'}
+                          borderRadius={'10px'}
+                          >
+                          </Box>
                           <Box
                             color={darkMode ? 'rgba(250,250,250,.7)' : '#000'}
                             >

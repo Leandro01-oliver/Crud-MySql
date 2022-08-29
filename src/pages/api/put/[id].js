@@ -15,7 +15,7 @@ const  handlerPut = async(req,res) =>{
         
         const lastName  = req.body.lastName;
 
-       await connection.query('UPDATE tb_user SET first_name = ?, last_name = ?, img_user = ? WHERE id = ?',
+       await connection.query('UPDATE tb_teste SET first_name = ?, last_name = ?, img_user = ? WHERE id = ?',
         [firstName,lastName,urlImg,conversaoId],
         (err,result)=>{
             if (err) {
